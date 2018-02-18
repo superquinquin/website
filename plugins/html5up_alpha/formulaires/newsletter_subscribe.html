@@ -1,0 +1,21 @@
+
+<div class='formulaire_spip formulaire_newsletter formulaire_[(#FORM)] ajax'>
+    [<p class="reponse_formulaire reponse_formulaire_ok">(#ENV**{message_ok})</p>]
+    [<p class="reponse_formulaire reponse_formulaire_erreur">(#ENV*{message_erreur})</p>]
+
+    [(#ENV{editable})
+    <form method='post' action='#ENV{action}'>
+        #ACTION_FORMULAIRE{#ENV{action}}
+        <div class="row uniform 50%">
+            #SET{name,session_email}#SET{obli,'obligatoire'}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs}|table_valeur{#GET{name}}}
+            <div class="8u 12u(mobilep) ">
+                <input type="email" name="#GET{name}"  value="#ENV*{#GET{name}}" id="#GET{name}" [(#HTML5|et{#GET{obli}})required='required']/>
+            </div>
+            <div class="4u 12u(mobilep) ">
+                <input type="submit" value="<:alpha:bouton_subscribe|attribut_html:>" />
+            </div>
+        </div>
+    </form>
+    ]
+</div>
+

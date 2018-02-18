@@ -1,0 +1,24 @@
+#SET{fl,superquinquin}
+#SET{name,creneau_volant}#SET{obli,''}#SET{erreurs,#ENV**{erreurs}|table_valeur{#GET{name}}}
+<li class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
+    <label>[(#GET{fl}|concat{':label_',#GET{name}}|_T)]</label>[
+    <span class='erreur_message'>(#GET{erreurs})</span>
+    ]
+    <BOUCLE_premiers1(DATA){enum 1,4}>
+    #SET{val,#VALEUR}
+    <div class="choix">
+        <input type="radio" class="radio" name="#GET{name}" id="#GET{name}_#GET{val}" value="#GET{val}"[(#ENV{#GET{name}
+               }|=={#GET{val}}|oui)checked="checked"] />
+        <label for="#GET{name}_#GET{val}">[(#GET{fl}|concat{':label_',#GET{name},"_",#GET{val}}|_T)]</label>
+    </div>
+    </BOUCLE_premiers1>
+</li>
+
+<!--EX07-->
+#SET{name,creneau_volant_raison}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs}|table_valeur{#GET{name}}}
+<div class="editer pleine_largeur editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
+    <label for="#GET{name}">[(#GET{fl}|concat{':label_',#GET{name}}|_T)]</label>[
+    <span class='erreur_message'>(#GET{erreurs})</span>
+    ]<textarea name="#GET{name}" id="#GET{name}" class="textarea">
+#ENV*{#GET{name},#GET{defaut}}</textarea>
+</div>

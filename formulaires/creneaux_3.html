@@ -1,0 +1,62 @@
+<div class=" ajax formulaire_spip formulaire_configurer formulaire_#FORM formulaire_#FORM-#ENV{id,nouveau}">
+    [(#ENV{editable})
+    <form method='post' class="feedback" action='#ENV{action}'>
+        [(#REM) declarer les hidden qui declencheront le service du formulaire
+        parametre : url d'action ]
+        #ACTION_FORMULAIRE{#ENV{action}}
+        #SET{fl,superquinquin}
+        <fieldset>
+            <h3>Choix des créneaux Etape  #ENV{_etape} / #ENV{_etapes} </h3>
+
+            Un petit résumé de vos choix ( attention le formulaire n'est pas encore envoyé au Bureau Des Membres)
+
+            <p>Vous avez choisi :
+            [(#ENV{type_creneau}|=={1}|oui)
+            <br/>Créneau <b>FIXE</b>
+                <ul>
+            <li>[(#GET{fl}|concat{':label_creneau_',#ENV{creneau1}}_T)]
+                [(#GET{fl}|concat{':label_semaine_',#ENV{semaine1}}_T)]</li>
+            <li>[(#GET{fl}|concat{':label_creneau_',#ENV{creneau2}}_T)]
+                [(#GET{fl}|concat{':label_semaine_',#ENV{semaine2}}_T)]</li>
+            <li>[(#GET{fl}|concat{':label_creneau_',#ENV{creneau3}}_T)]
+                [(#GET{fl}|concat{':label_semaine_',#ENV{semaine3}}_T)]</li>
+
+            </ul>
+
+            ]
+            [(#ENV{type_creneau}|=={2}|oui)
+            Créneau VOLANT
+            [(#GET{fl}|concat{':label_creneau_volant_',#ENV{creneau_volant}}_T)]
+            [(#ENV{creneau_volant}|=={4}|oui)
+                [(#ENV{creneau_volant_raison})]
+                ]
+            ]
+            [(#ENV{type_creneau}|=={3}|oui)
+            Créneau lié à une COMMISSION
+            [(#GET{fl}|concat{':label_commission_',#ENV{commission}}_T)]
+            [(#ENV{commission}|=={10}|oui)
+            [(#ENV{commission_autre})]
+            ]
+            ]
+
+
+            <!--EX07-->
+            #SET{name,remarques}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs}|table_valeur{#GET{name}}}
+            <div class="editer pleine_largeur editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
+                <label for="#GET{name}">[(#GET{fl}|concat{':label_',#GET{name}}|_T)]</label>[
+                <span class='erreur_message'>(#GET{erreurs})</span>
+                ]<textarea rows='10' name="#GET{name}" id="#GET{name}" class="textarea">
+                #ENV*{#GET{name},#GET{defaut}}</textarea>
+            </div>
+        </fieldset>
+        [(#REM) ajouter les saisies supplementaires : extra et autre, a cet endroit ]
+        <!--extra-->
+        <p></p>
+        <p class="boutons">
+            <input type="submit" class="submit" name="_retour_etape_2" value="<:retour:>" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='submit' class='submit' value='<:bouton_enregistrer:>'/></p>
+        [<p class="errorstr reponse_formulaire reponse_formulaire_erreur"><strong>(#ENV*{message_erreur})</strong></p>]
+    </form>
+    ]
+    [<p class="infostr reponse_formulaire reponse_formulaire_ok"><strong>(#ENV*{message_ok})</strong></p>]
+</div>

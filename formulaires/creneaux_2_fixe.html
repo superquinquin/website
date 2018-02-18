@@ -1,0 +1,104 @@
+#SET{fl,superquinquin}
+#SET{name,creneau1}#SET{obli,''}#SET{erreurs,#ENV**{erreurs}|table_valeur{#GET{name}}}
+<li class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
+    <label>[(#GET{fl}|concat{':label_',#GET{name}}|_T)]</label>[
+    <span class='erreur_message'>(#GET{erreurs})</span>
+    ]
+    <BOUCLE_premiers1(DATA){enum 1,17}>
+    #SET{val,#VALEUR}
+    <div class="choix">
+        <input type="radio" class="radio" name="#GET{name}" id="#GET{name}_#GET{val}" value="#GET{val}"[(#ENV{#GET{name}
+               }|=={#GET{val}}|oui)checked="checked"] />
+        <label for="#GET{name}_#GET{val}">[(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]</label>
+    </div>
+    </BOUCLE_premiers1>
+
+</li>
+#SET{name,semaine1}#SET{obli,''}#SET{erreurs,#ENV**{erreurs}|table_valeur{#GET{name}}}
+<li class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
+    <label>[(#GET{fl}|concat{':label_',#GET{name}}|_T)]</label>[
+    <span class='erreur_message'>(#GET{erreurs})</span>
+    ]
+    <BOUCLE_semaine1(DATA){enum 1,5}>
+
+    #SET{val,#VALEUR}
+    <div class="choix">
+        <input type="radio" class="radio" name="#GET{name}" id="#GET{name}_#GET{val}" value="#GET{val}"[(#ENV{#GET{name}
+               }|=={#GET{val}}|oui)checked="checked"] />
+        <label for="#GET{name}_#GET{val}">[(#GET{fl}|concat{':label_semaine',"_",#GET{val}}|_T)]</label>
+    </div>
+    </BOUCLE_semaine1>
+
+</li>
+
+
+<hr/>
+
+#SET{name,creneau2}#SET{obli,''}#SET{erreurs,#ENV**{erreurs}|table_valeur{#GET{name}}}
+<li class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
+    <label>[(#GET{fl}|concat{':label_',#GET{name}}|_T)]</label>[
+    <span class='erreur_message'>(#GET{erreurs})</span>
+    ]
+    <BOUCLE_premiers2(DATA){enum 1,17}>
+    #SET{val,#VALEUR}
+    <div class="choix">
+        <input type="radio" class="radio" name="#GET{name}" id="#GET{name}_#GET{val}" value="#GET{val}"[(#ENV{#GET{name}
+               }|=={#GET{val}}|oui)checked="checked"] />
+        <label for="#GET{name}_#GET{val}">[(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]</label>
+    </div>
+    </BOUCLE_premiers2>
+
+</li>
+
+#SET{name,semaine2}#SET{obli,''}#SET{erreurs,#ENV**{erreurs}|table_valeur{#GET{name}}}
+<li class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
+    <label>[(#GET{fl}|concat{':label_',#GET{name}}|_T)]</label>[
+    <span class='erreur_message'>(#GET{erreurs})</span>
+    ]
+    <BOUCLE_semaine2(DATA){enum 1,5}>
+
+    #SET{val,#VALEUR}
+    <div class="choix">
+        <input type="radio" class="radio" name="#GET{name}" id="#GET{name}_#GET{val}" value="#GET{val}"[(#ENV{#GET{name}
+               }|=={#GET{val}}|oui)checked="checked"] />
+        <label for="#GET{name}_#GET{val}">[(#GET{fl}|concat{':label_semaine',"_",#GET{val}}|_T)]</label>
+    </div>
+    </BOUCLE_semaine2>
+
+</li>
+
+<hr/>
+
+
+#SET{name,creneau3}#SET{obli,''}#SET{erreurs,#ENV**{erreurs}|table_valeur{#GET{name}}}
+<li class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
+    <label>[(#GET{fl}|concat{':label_',#GET{name}}|_T)]</label>[
+    <span class='erreur_message'>(#GET{erreurs})</span>
+    ]
+    <BOUCLE_premiers3(DATA){enum 1,17}>
+    #SET{val,#VALEUR}
+    <div class="choix">
+        <input type="radio" class="radio" name="#GET{name}" id="#GET{name}_#GET{val}" value="#GET{val}"[(#ENV{#GET{name}
+               }|=={#GET{val}}|oui)checked="checked"] />
+        <label for="#GET{name}_#GET{val}">[(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]</label>
+    </div>
+    </BOUCLE_premiers3>
+
+</li>
+
+#SET{name,semaine3}#SET{obli,''}#SET{erreurs,#ENV**{erreurs}|table_valeur{#GET{name}}}
+<li class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
+    <label>[(#GET{fl}|concat{':label_',#GET{name}}|_T)]</label>[
+    <span class='erreur_message'>(#GET{erreurs})</span>
+    ]
+    <BOUCLE_semaine3(DATA){enum 1,5}>
+
+    #SET{val,#VALEUR}
+    <div class="choix">
+        <input type="radio" class="radio" name="#GET{name}" id="#GET{name}_#GET{val}" value="#GET{val}"[(#ENV{#GET{name}
+               }|=={#GET{val}}|oui)checked="checked"] />
+        <label for="#GET{name}_#GET{val}">[(#GET{fl}|concat{':label_semaine',"_",#GET{val}}|_T)]</label>
+    </div>
+    </BOUCLE_semaine3>
+
+</li>

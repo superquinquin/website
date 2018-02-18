@@ -1,0 +1,99 @@
+[(#REM)
+	page sommaire
+	on liste les listes definis dans la configuration du squelette
+
+	param:
+	(aucun)
+
+
+
+]<!DOCTYPE HTML>
+<!--
+	Alpha by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<script type='text/javascript'>/*<![CDATA[*/(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement);/*]]>*/</script>
+		<title>[(#NOM_SITE_SPIP|textebrut)][ - (#SLOGAN_SITE_SPIP|textebrut)]</title>
+		[<meta name="description" content="(#DESCRIPTIF_SITE_SPIP|couper{150}|attribut_html)" />]
+		<meta charset="utf-8" />
+		<INCLURE{fond=inclure/head} />
+	</head>
+	<body class="landing">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+			<INCLURE{fond=inclure/header,class='alt'} />
+
+			<!-- Banner -->
+			<section id="banner">
+				 [(#CONFIG{alpha/config_titre_sommaire}|oui)<h2>#NOM_SITE_SPIP</h2>]
+			</section>
+
+			<!-- Main -->
+				<section id="main" class="container">
+
+					<section class="box special">
+						<header class="major">
+							[<h2>(#SLOGAN_SITE_SPIP)</h2>]
+							[<div>(#DESCRIPTIF_SITE_SPIP)</div>]
+						</header>
+						<span class="image featured"><BOUCLE_doc(DOCUMENTS){tout}{id_document=#CONFIG{alpha/doc_home2}}>[(#FICHIER|image_passe_partout{1200,393}|image_reduire{1200}|image_recadre{1200,393,center})]</BOUCLE_doc></span>
+					</section>
+
+					#SET{CPT,0}
+					<div class="row">
+						<BOUCLE_sommaire(ARTICLES){par num titre}{id_article IN #CONFIG{alpha/articles_home}|explode{','}} >
+						#SET{CPT,#GET{CPT}|plus{1}}
+						#SET{divdeux,#GET{CPT}|fmod{2}}
+						<div class="6u 12u(narrower)">
+							<section class="box special">
+								<span class="image featured">[(#LOGO_ARTICLE|image_passe_partout{576,256}|image_reduire{576}|image_recadre{576,256,center}|inserer_attribut{class,spip_logos})]</span>
+								<h3>#TITRE</h3>
+								#INTRODUCTION
+								<ul class="actions">
+									<li><a href="#URL_ARTICLE" class="button alt"><:alpha:read_more:></a></li>
+								</ul>
+							</section>
+						</div>
+						[(#GET{divdeux}|=={0}|?{"</div><div class='row'>"})]
+						</BOUCLE_sommaire>
+
+
+						<BOUCLE_rub123(RUBRIQUES){par num titre}{id_parent=0}>
+							#SET{CPT,#GET{CPT}|plus{1}}
+							#SET{divdeux,#GET{CPT}|fmod{2}}
+						<div class="6u 12u(narrower)">
+							<section class="box special">
+								<span class="image featured">[(#LOGO_ARTICLE_RUBRIQUE||image_passe_partout{576,256}|image_reduire{576}|image_recadre{576,256,center}|inserer_attribut{class,spip_logos})]</span>
+								<h3>#TITRE</h3>
+								#INTRODUCTION
+								<ul class="actions">
+									<li><a href="#URL_RUBRIQUE" class="button alt"><:alpha:read_more:></a></li>
+								</ul>
+							</section>
+
+						</div>
+						[(#GET{divdeux}|=={0}|?{"</div><div class='row'>"})]
+						</BOUCLE_rub123>
+					</div>
+
+				</section>
+
+
+			[(#CONFIG{alpha/newsletter_home}|oui)
+			<!-- CTA -->
+			<INCLURE{fond=inclure/CallToAction} />]
+
+			<!-- Footer -->
+			<INCLURE{fond=inclure/footer} />
+
+		</div>
+
+		<!-- Scripts -->
+		<INCLURE{fond=inclure/scripts} />
+
+	</body>
+</html>

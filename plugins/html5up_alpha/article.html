@@ -1,0 +1,59 @@
+<BOUCLE_article(ARTICLES){id_article}>
+<!DOCTYPE HTML>
+<!--
+	Alpha by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+	<title>[(#TITRE|textebrut|entites_html)]</title>
+	<meta charset="utf-8" />
+	<INCLURE{fond=inclure/head} />
+
+</head>
+<body>
+<div id="page-wrapper">
+
+
+	<!-- Header -->
+	<INCLURE{fond=inclure/header,env} />
+
+	<!-- Main -->
+
+	<section id="main" class="container">
+	<header>
+		[<h2 class="#EDIT{titre}">(#TITRE)</h2>]
+		[<p class="#EDIT{soustitre}">(#SOUSTITRE)</p>]
+	</header>
+	<div class="box">
+		[<span class="image featured">(#LOGO_ARTICLE|image_passe_partout{1200,393}|image_reduire{1200}|image_recadre{1200,393,center})</span>]
+		[<div class="#EDIT{texte}">(#TEXTE)</div>]
+		[(#REM) Gestion du portfolio et des documents ]
+		[(#INCLURE{fond=inclure/documents,id_article, env})]
+		[<div class="notes"><hr />(#NOTES)</div>]
+	</div>
+		
+	<B_forum>	
+	<div class="box">
+		[(#REM) Forum de l'article ]
+		<INCLURE{fond=inclure/forum,id_article} />
+		[<h2 class="forum-titre"><:forum:form_pet_message_commentaire:></h2>
+		(#FORMULAIRE_FORUM)]
+	</div>
+	<BOUCLE_forum(FORUMS){id_article}{0,1}>	</BOUCLE_forum>
+	
+	</section>
+	<!-- Footer -->
+	<INCLURE{fond=inclure/footer} />
+
+</div>
+
+<!-- Scripts -->
+<INCLURE{fond=inclure/scripts} />
+
+
+
+</body>
+</html>
+</BOUCLE_article>

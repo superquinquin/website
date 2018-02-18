@@ -1,0 +1,44 @@
+<BOUCLE_article(ARTICLES){id_article}>
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>[(#TITRE|textebrut|entites_html)]</title>
+	<meta charset="utf-8" />
+	<INCLURE{fond=inclure/head} />
+
+</head>
+<body>
+<div id="page-wrapper">
+
+
+
+	<!-- Main -->
+
+	<section id="main" class="container">
+	<header>
+		[<h2 class="#EDIT{titre}">(#TITRE)</h2>]
+		[<p class="#EDIT{soustitre}">(#SOUSTITRE)</p>]
+	</header>
+	<div class="box">
+		[<span class="image featured">(#LOGO_ARTICLE|image_passe_partout{1200,393}|image_reduire{1200}|image_recadre{1200,393,center})</span>]
+		[<div class="#EDIT{texte}">(#TEXTE)</div>]
+		[(#REM) Gestion du portfolio et des documents ]
+		[(#INCLURE{fond=inclure/documents,id_article, env})]
+		[<div class="notes"><hr />(#NOTES)</div>]
+	</div>
+		
+
+	</section>
+	<!-- Footer -->
+	<INCLURE{fond=inclure/footer} />
+
+</div>
+
+<!-- Scripts -->
+<INCLURE{fond=inclure/scripts} />
+
+
+
+</body>
+</html>
+</BOUCLE_article>

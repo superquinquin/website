@@ -1,0 +1,32 @@
+<div class=" ajax formulaire_spip formulaire_configurer formulaire_#FORM formulaire_#FORM-#ENV{id,nouveau}">
+    [(#ENV{editable})
+    <form method='post' class="feedback" action='#ENV{action}'>
+        [<p class="errorstr reponse_formulaire reponse_formulaire_erreur"><strong>(#ENV*{message_erreur})</strong></p>]
+        [(#REM) declarer les hidden qui declencheront le service du formulaire
+        parametre : url d'action ]
+        #ACTION_FORMULAIRE{#ENV{action}}
+        #SET{fl,superquinquin}
+        <fieldset>
+
+            <h3>Choix des créneaux Etape  #ENV{_etape} / #ENV{_etapes} </h3>
+            [(#ENV{type_creneau}|=={1}|oui)
+            <INCLURE{fond=formulaires/creneaux_2_fixe,env,erreurs} />
+            ]
+            [(#ENV{type_creneau}|=={2}|oui)
+            <INCLURE{fond=formulaires/creneaux_2_volant,env,erreurs} />
+            ]
+            [(#ENV{type_creneau}|=={3}|oui)
+            <INCLURE{fond=formulaires/creneaux_2_commission,env,erreurs} />
+            ]
+
+        </fieldset>
+        [(#REM) ajouter les saisies supplementaires : extra et autre, a cet endroit ]
+        <!--extra-->
+        <p class="boutons">
+            <input type="submit" class="submit" name="_retour_etape_1" value="<:retour:>" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type='submit' class='submit' value='Suivant'/></p>
+        [<p class="errorstr reponse_formulaire reponse_formulaire_erreur"><strong>(#ENV*{message_erreur})</strong></p>]
+    </form>
+    ]
+    [<p class="infostr reponse_formulaire reponse_formulaire_ok"><strong>(#ENV*{message_ok})</strong></p>]
+</div>
