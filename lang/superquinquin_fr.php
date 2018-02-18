@@ -70,7 +70,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
     'label_commission_9' => 'Récit/Chronique',
     'label_commission_10' => 'Autre',
 
-    'label_commission_autre' => 'Autre détail',
+    'label_commission_autre' => 'Merci de préciser',
 
     'label_remarques' => 'Des remarques, des questions ? ',
 

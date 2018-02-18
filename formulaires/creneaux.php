@@ -100,21 +100,14 @@ function formulaires_creneaux_verifier_2_dist()
         if (! _request('creneau2')) {
             $erreurs['creneau2'] = 'Merci de choisir votre second choix de créneau';
         }
-        if (! _request('creneau3')) {
-            $erreurs['creneau3'] = 'Merci de choisir votre troisième choix de créneau';
-        }
         if (! _request('semaine1')) {
             $erreurs['semaine1'] = "Si vous n'avez pas de préférence pour la semaine, choisissez l'option 'peu importe'"   ;
         }
         if (! _request('semaine2')) {
             $erreurs['semaine2'] = "Si vous n'avez pas de préférence pour la semaine, choisissez l'option 'peu importe'"   ;
         }
-        if (! _request('semaine3')) {
-            $erreurs['semaine3'] = "Si vous n'avez pas de préférence pour la semaine, choisissez l'option 'peu importe'"   ;
-        }
-        if (( _request('creneau1') ==  _request('creneau2')) and ( _request('creneau2') == _request('creneau3'))) {
-            $erreurs['creneau3'] = "Nous allons faire tout notre possible pour prendre en compte votre premier choix. Merci de choisir le 2eme et 3eme choix sur un créneau horaire différent"   ;
-
+        if ( _request('creneau1') ==  _request('creneau2')) {
+            $erreurs['creneau2'] = "Nous allons faire tout notre possible pour prendre en compte votre premier choix. Merci de choisir pour le 2eme choix un créneau horaire différent du premier"   ;
         }
 
     }
