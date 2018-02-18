@@ -14,6 +14,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
     'label_creneau1' => "Mon premier choix de créneau fixe (une seule réponse) " ,
     'label_creneau2' => "Mon second choix de créneau fixe (une seule réponse)" ,
     'label_creneau3' => "Mon troisième choix de créneau fixe (une seule réponse)" ,
+    'label_creneau_0' => "" ,
     'label_creneau_1' => "Lundi 12h30-15h30" ,
     'label_creneau_2' => "Lundi 15h30-18h30" ,
     'label_creneau_3' => "Lundi 18h30-21h30" ,
@@ -32,6 +33,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
     'label_creneau_16' => "Samedi 10h00-13h00" ,
     'label_creneau_17' => "Samedi 15h00- 18h00" ,
 
+    'label_semaine0' => "",
     'label_semaine1' => "Choix de la semaine pour votre choix 1",
     'label_semaine2' => "Choix de la semaine pour votre choix 2",
     'label_semaine3' => "Choix de la semaine pour votre choix 3",
