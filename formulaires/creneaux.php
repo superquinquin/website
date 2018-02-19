@@ -164,7 +164,8 @@ function formulaires_creneaux_traiter_dist()
         "creneau_volant_raison" =>_request('creneau_volant_raison'),
         "commission" =>_request('commission'),
         "commission_autre" =>_request('commission_autre'),
-        'remarques' =>_request('remarques')
+        'remarques' =>_request('remarques'),
+	'ladate' => date('Y-m-d H:i:s')
     );
 
     // insertion dans la table form9
