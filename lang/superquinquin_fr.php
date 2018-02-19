@@ -46,9 +46,8 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 
     'label_creneau_volant' => 'Je choisis un créneau volant parce que ' ,
     'label_creneau_volant_1' => "Mes horaires professionnels changent toutes les semaines" ,
-    'label_creneau_volant_2' => "Je suis intermittent.e du spectacle" ,
-    'label_creneau_volant_3' => "Mon travail m'oblige à de nombreux déplacements" ,
-    'label_creneau_volant_4' => "Autre" ,
+    'label_creneau_volant_2' => "Mon travail m'oblige à de nombreux déplacements" ,
+    'label_creneau_volant_3' => "Autre" ,
 
     'label_creneau_volant_raison' => 'Merci de préciser la raison :' ,
 
@@ -59,7 +58,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 
 
     'commission_legend' => "Participation aux activités d'une commission " ,
-    'commission_explication' => "Pour les personnes qui réalisent leur 3 heures dans diverses activités liées au travail des commission ( en dehors des réunions bénévoles). <br/>PS :  Si vous souhaitez participer aux activités d\'une commission, merci de vous rapprocher de sa ou de son  responsable. ",
+    'commission_explication' => "Pour les personnes qui réalisent leur 3 heures dans diverses activités liées au travail des commission ( en dehors des réunions bénévoles). <br/>PS :  Si vous souhaitez participer aux activités d'une commission, merci de vous rapprocher de sa ou de son  responsable. ",
     'label_commission' => 'Je participe déjà aux activités de la commission :',
     'label_commission_1' => 'Informatique',
     'label_commission_2' => 'Comptabilité',
@@ -68,9 +67,8 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
     'label_commission_5' => 'Travaux/maintenance',
     'label_commission_6' => 'Achats',
     'label_commission_7' => 'Communication',
-    'label_commission_8' => 'Achats',
-    'label_commission_9' => 'Récit/Chronique',
-    'label_commission_10' => 'Autre',
+    'label_commission_8' => 'Récit/Chronique',
+    'label_commission_9' => 'Autre',
 
     'label_commission_autre' => 'Merci de préciser',
 

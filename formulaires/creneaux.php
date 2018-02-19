@@ -118,7 +118,7 @@ function formulaires_creneaux_verifier_2_dist()
             $erreurs['creneau_volant'] = "Merci de choisir une raison";
         }
         else {
-            if (_request('creneau_volant') == 4 and strlen(_request('creneau_volant_raison')) == 0) {
+            if (_request('creneau_volant') == 3 and strlen(_request('creneau_volant_raison')) == 0) {
                 $erreurs['creneau_volant_raison'] = "Merci de nous en dire un peu plus sur ce autre";
             }
         }

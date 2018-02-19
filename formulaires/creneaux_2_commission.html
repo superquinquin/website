@@ -10,7 +10,7 @@
         <label>[(#GET{fl}|concat{':label_',#GET{name}}|_T)]</label>[
         <span class='erreur_message'>(#GET{erreurs})</span>
         ]
-        <BOUCLE_premiers1(DATA){enum 1,10}>
+        <BOUCLE_premiers1(DATA){enum 1,9}>
         #SET{val,#VALEUR}
         <div class="choix">
             <input type="radio" class="radio" name="#GET{name}" id="#GET{name}_#GET{val}" value="#GET{val}"[(#ENV{#GET{name}
@@ -25,8 +25,7 @@
     <div class="editer pleine_largeur editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
         <label for="#GET{name}">[(#GET{fl}|concat{':label_',#GET{name}}|_T)]</label>[
         <span class='erreur_message'>(#GET{erreurs})</span>
-        ]<textarea name="#GET{name}" id="#GET{name}" class="textarea">
-    #ENV*{#GET{name},#GET{defaut}}</textarea>
+        ]<textarea name="#GET{name}" id="#GET{name}" class="textarea">#ENV*{#GET{name},#GET{defaut}}</textarea>
     </div>
     </div>
 </fieldset>
