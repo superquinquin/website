@@ -1,0 +1,201 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>[(#TITRE|textebrut|entites_html)]</title>
+	<meta charset="utf-8" />
+	<INCLURE{fond=inclure/head} />
+
+</head>
+<body>
+<div id="page-wrapper">
+
+
+
+	<!-- Main -->
+
+	<section id="main" class="container">
+	<header>
+		[<h2 class="#EDIT{titre}">(#TITRE)</h2>]
+		[<p class="#EDIT{soustitre}">(#SOUSTITRE)</p>]
+	</header>
+
+
+		#SET{fl,superquinquin}
+
+
+		<BOUCLE_semaineS1(DATA){enum 1,5}>
+		#SET{semaine,#VALEUR}
+
+		<div class="box">
+			<h1>[(#GET{fl}|concat{':label_creneau',"1"}|_T)] -
+			[(#GET{fl}|concat{':label_semaine',"_",#GET{semaine}}|_T)]</h1>
+			<table>
+				<tr><th>Lundi</th><th>Mercredi</th><th>Jeudi</th><th>Vendredi</th><th>Samedi</th></tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td>#SET{val,4} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_1,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>#SET{val,8} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_1,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>#SET{val,12} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_1,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>#SET{val,16} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_1,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+				</tr>
+				<tr>
+					<td>#SET{val,1} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_1,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>#SET{val,5} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_1,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>#SET{val,9} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_1,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>#SET{val,13} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_1,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>&nbsp;</td>
+
+				</tr>
+				<tr>
+					<td>#SET{val,2} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_1,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>#SET{val,6} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_1,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>#SET{val,10} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_1,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>#SET{val,14} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_1,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>#SET{val,17} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_1,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+				</tr>
+				<tr>
+					<td>#SET{val,3} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_1,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>#SET{val,7} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_1,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>#SET{val,11} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_1,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>#SET{val,15} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_1,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+		</div>
+
+		</BOUCLE_semaineS1>
+
+
+		<BOUCLE_semaineS2(DATA){enum 1,5}>
+		#SET{semaine,#VALEUR}
+
+		<div class="box">
+			<h1>[(#GET{fl}|concat{':label_creneau',"2"}|_T)] -
+				[(#GET{fl}|concat{':label_semaine',"_",#GET{semaine}}|_T)]</h1>
+			<table>
+				<tr><th>Lundi</th><th>Mercredi</th><th>Jeudi</th><th>Vendredi</th><th>Samedi</th></tr>
+				<tr>
+					<td>&nbsp;</td>
+
+					<td>#SET{val,4}  [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_2,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>#SET{val,8}  [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_2,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>#SET{val,12} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_2,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>#SET{val,16} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_2,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+				</tr>
+				<tr>
+					<td>#SET{val,1} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_2,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>#SET{val,5} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_2,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>#SET{val,9} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_2,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>#SET{val,13} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_2,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>&nbsp;</td>
+
+				</tr>
+				<tr>
+					<td>#SET{val,2} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_2,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>#SET{val,6} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_2,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>#SET{val,10} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_2,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>#SET{val,14} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_2,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>#SET{val,17} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_2,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+				</tr>
+				<tr>
+					<td>#SET{val,3} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_2,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>#SET{val,7} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_2,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>#SET{val,11} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_2,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>#SET{val,15} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_2,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+		</div>
+
+		</BOUCLE_semaineS2>
+
+		<BOUCLE_semaineS3(DATA){enum 1,5}>
+		#SET{semaine,#VALEUR}
+
+		<div class="box">
+			<h1>[(#GET{fl}|concat{':label_creneau',"3"}|_T)] -
+				[(#GET{fl}|concat{':label_semaine',"_",#GET{semaine}}|_T)]</h1>
+			<table>
+				<tr><th>Lundi</th><th>Mercredi</th><th>Jeudi</th><th>Vendredi</th><th>Samedi</th></tr>
+				<tr>
+					<td>&nbsp;</td>
+
+					<td>#SET{val,4} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_3,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>#SET{val,8} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_3,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>#SET{val,12} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_3,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>#SET{val,16} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_3,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+				</tr>
+				<tr>
+					<td>#SET{val,1} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_3,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>#SET{val,5} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_3,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>#SET{val,9} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_3,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>#SET{val,13} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_3,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>&nbsp;</td>
+
+				</tr>
+				<tr>
+					<td>#SET{val,2} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_3,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>#SET{val,6} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_3,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>#SET{val,10} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_3,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>#SET{val,14} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_3,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>#SET{val,17} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_3,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+				</tr>
+				<tr>
+					<td>#SET{val,3} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_3,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>#SET{val,7} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_3,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>#SET{val,11} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_3,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>#SET{val,15} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_3,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+		</div>
+
+		</BOUCLE_semaineS3>
+
+
+
+
+		<div class="box">
+			<h1>[(#GET{fl}|concat{':label_creneau_volant'}|_T)] </h1>
+			<table>
+				<BOUCLE_creneau(spip_sqq_creneaux){type_creneau=2}{par creneau_volant}>
+				<tr>
+					<td>[(#GET{fl}|concat{':label_creneau_volant_'#CRENEAU_VOLANT}|_T)]</td>
+					<td>#PRENOM #NOM</td>
+					<td>#CRENEAU_VOLANT_RAISON</td>
+				</tr>
+				</BOUCLE_creneau>
+			</table>
+		</div>
+
+
+
+		<div class="box">
+			<h1>[(#GET{fl}|concat{':commission_legend'}|_T)] </h1>
+			<table>
+				<BOUCLE_creneau2(spip_sqq_creneaux){type_creneau=3}{par commission}>
+				<tr>
+					<td>[(#GET{fl}|concat{':label_commission_'#COMMISSION}|_T)]</td>
+					<td>#PRENOM #NOM</td>
+					<td>#COMMISSION_AUTRE</td>
+				</tr>
+				</BOUCLE_creneau2>
+			</table>
+		</div>
+
+
+
+	</section>
+	<!-- Footer -->
+	<INCLURE{fond=inclure/footer} />
+
+</div>
+
+<!-- Scripts -->
+<INCLURE{fond=inclure/scripts} />
+
+
+
+</body>
+</html>
+</BOUCLE_article>
