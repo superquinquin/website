@@ -23,6 +23,67 @@
 		#SET{fl,superquinquin}
 
 
+
+		<div class="box">
+			<h1>Nb de personnes inscrites en choix 1 toutes semaines confondues</h1>
+			<table>
+				<tr><th>Lundi</th><th>Mercredi</th><th>Jeudi</th><th>Vendredi</th><th>Samedi</th></tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td>#SET{val,4} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_tout,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>#SET{val,8} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_tout,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>#SET{val,12} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_tout,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>#SET{val,16} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_tout,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+				</tr>
+				<tr>
+					<td>#SET{val,1} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_tout,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>#SET{val,5} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_tout,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>#SET{val,9} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_tout,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>#SET{val,13} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_tout,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>&nbsp;</td>
+
+				</tr>
+				<tr>
+					<td>#SET{val,2} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_tout,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>#SET{val,6} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_tout,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>#SET{val,10} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_tout,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>#SET{val,14} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_tout,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>#SET{val,17} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_tout,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+				</tr>
+				<tr>
+					<td>#SET{val,3} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_tout,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>#SET{val,7} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_tout,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>#SET{val,11} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_tout,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>#SET{val,15} [(#GET{fl}|concat{':label_creneau',"_",#GET{val}}|_T)]<INCLURE{fond=inclure/detail_creneau_tout,type_creneau=1,val=#GET{val},semaine=#GET{semaine}} /></td>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+
+
+
+
+			<h1>Creneaux fixes :
+				<BOUCLE_creneau000(spip_sqq_creneaux){type_creneau=1}{creneau1>0}></BOUCLE_creneau000>
+				<b>#TOTAL_BOUCLE</b><//B_creneau000>
+			</h1>
+			<h1>[(#GET{fl}|concat{':label_creneau_volant'}|_T)] :
+				<BOUCLE_creneau00(spip_sqq_creneaux){type_creneau=2}></BOUCLE_creneau00>
+				<b>#TOTAL_BOUCLE</b><//B_creneau00>
+			</h1>
+			<h1>[(#GET{fl}|concat{':commission_legend'}|_T)]
+				<BOUCLE_creneau02(spip_sqq_creneaux){type_creneau=3}{par commission}></BOUCLE_creneau02>
+				<b>#TOTAL_BOUCLE</b><//B_creneau02>
+			</h1>
+		</div>
+
+
+
+
+		</div>
+
+
+
+
 		<BOUCLE_semaineS1(DATA){enum 1,5}>
 		#SET{semaine,#VALEUR}
 
