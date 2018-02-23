@@ -14,7 +14,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
     'label_creneau1' => "Mon premier choix de créneau fixe (une seule réponse) " ,
     'label_creneau2' => "Mon second choix de créneau fixe (une seule réponse)" ,
     'label_creneau3' => "Mon troisième choix de créneau fixe (une seule réponse)" ,
-    'label_creneau_0' => "" ,
+    'label_creneau_0' => "&nbsp;" ,
     'label_creneau_1' => "Lundi 12h30-15h30" ,
     'label_creneau_2' => "Lundi 15h30-18h30" ,
     'label_creneau_3' => "Lundi 18h30-21h30" ,
@@ -33,18 +33,26 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
     'label_creneau_16' => "Samedi 10h00-13h00" ,
     'label_creneau_17' => "Samedi 15h00- 18h00" ,
 
-    'label_semaine0' => "",
+    'label_semaine0' => "&nbsp;",
     'label_semaine1' => "Choix de la semaine pour votre choix 1",
     'label_semaine2' => "Choix de la semaine pour votre choix 2",
     'label_semaine3' => "Choix de la semaine pour votre choix 3",
+    'label_semaine_0' => "&nbsp;",
     'label_semaine_1' => "Semaine A ( semaine du 19 au 25 Février puis 4 semaines plus tard)",
     'label_semaine_2' => "Semaine B ( semaine du 26 Février au 4 Mars puis 4 semaines plus tard)",
     'label_semaine_3' => "Semaine C ( semaine du 5 Mars au 11 Mars puis 4 semaines plus tard)",
     'label_semaine_4' => "Semaine D ( semaine du 12 Mars au 18 Mars puis 4 semaines plus tard)",
+    'label_semaine_court_1' => "Sem. A",
+    'label_semaine_court_2' => "Sem. B",
+    'label_semaine_court_3' => "Sem. C",
+    'label_semaine_court_4' => "Sem. D",
+    'label_semaine_court_0' => "&nbsp;",
     'label_semaine_5' => "Peu importe la semaine",
+    'label_semaine_court_5' => "Sem. A/B/C/D",
 
 
     'label_creneau_volant' => 'Je choisis un créneau volant parce que ' ,
+    'label_creneau_volant_0' => "&nbsp;" ,
     'label_creneau_volant_1' => "Mes horaires professionnels changent toutes les semaines" ,
     'label_creneau_volant_2' => "Mon travail m'oblige à de nombreux déplacements" ,
     'label_creneau_volant_3' => "Autre" ,
@@ -54,12 +62,16 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 
 
 
+    'label_bdm_ok' => "BDM ok?",
+    'label_bdm_remarques' => "Des remarques par le BDM",
+    'label_bdm_ok_oui' => "Considéré comme traité par le BDM si coché",
 
 
 
     'commission_legend' => "Participation aux activités d'une commission " ,
     'commission_explication' => "Pour les personnes qui réalisent leur 3 heures dans diverses activités liées au travail des commission ( en dehors des réunions bénévoles). <br/>PS :  Si vous souhaitez participer aux activités d'une commission, merci de vous rapprocher de sa ou de son  responsable. ",
     'label_commission' => 'Je participe déjà aux activités de la commission :',
+    'label_commission_0' => '&nbsp;',
     'label_commission_1' => 'Informatique',
     'label_commission_2' => 'Comptabilité',
     'label_commission_3' => 'Accueil/intégration',

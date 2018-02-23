@@ -1,0 +1,65 @@
+#CACHE{0}
+[(#SESSION{id_auteur}|in_array{#LISTE{1,525,110,220}}|sinon_interdire_acces)]
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>[(#TITRE|textebrut|entites_html)]</title>
+    <meta charset="utf-8" />
+    <INCLURE{fond=inclure/head} />
+
+</head>
+<body>
+<div id="page-wrapper">
+#SET{fl,superquinquin}
+
+
+    <!-- Main -->
+
+    <section id="main" class="container">
+        <div class="box">
+
+
+            Tri par <a href='[(#SELF|parametre_url{tri,ladate}|parametre_url{var_mode,recalcul}|parametre_url{tri_inverse,''})]'>Date</a>
+            Tri par <a href='[(#SELF|parametre_url{tri,nom}|parametre_url{var_mode,recalcul}|parametre_url{tri_inverse,''})]'>Nom</a>
+
+            Tri par <a href='[(#SELF|parametre_url{tri,''}|parametre_url{triinverse,ladate}|parametre_url{var_mode,recalcul})]'>Date</a>
+            Tri par <a href='[(#SELF|parametre_url{tri,''}|parametre_url{triinverse,nom}|parametre_url{var_mode,recalcul})]'>Nom</a>
+            <a href='spip.php?page=creneaux_liste_planning'>Planning</a>
+            [(#ENV{triinverse}|?{#SET{triinverse,#ENV{triinverse}},#SET{triinverse,""}})]
+            <table>
+                <BOUCLE_creneau000(spip_sqq_creneaux){par #ENV{tri}}{!par #GET{triinverse}}>
+                    <tr>
+                        <td>#BDM_OK <input type="checkbox" name="#GET{name}" class="checkbox" id="bdm_ok" value="#BDM_OK"  [(#BDM_OK|oui)checked="checked"] /> </td>
+                        <td>[(#PRENOM|strtolower|ucfirst)] [(#NOM|strtoupper)]<br/>#LADATE<br/><a href="spip.php?page=creneaux_modif&id_sqq_creneaux=#ID_SQQ_CRENEAUX">#ID_SQQ_CRENEAUX</a></td>
+                        <td>[(#GET{fl}|concat{':label_creneau',"_",#CRENEAU1}|_T)] [(#GET{fl}|concat{':label_semaine',"_court_",#SEMAINE1}|_T)]<br/>
+                        [(#GET{fl}|concat{':label_creneau',"_",#CRENEAU2}|_T)] [(#GET{fl}|concat{':label_semaine',"_court_",#SEMAINE2}|_T)]<br/>
+                        [(#GET{fl}|concat{':label_creneau',"_",#CRENEAU3}|_T)] [(#GET{fl}|concat{':label_semaine',"_court_",#SEMAINE3}|_T)]
+                            [(#GET{fl}|concat{':label_creneau_volant_'#CRENEAU_VOLANT}|_T)]<br/>
+                            [(#GET{fl}|concat{':label_commission_'#COMMISSION}|_T)]
+                        </td>
+                        <td>
+                        <td>#BDM_REMARQUES             </td>
+
+
+                    </tr>
+                </BOUCLE_creneau000>
+                    </table>
+                    Total : <b>#TOTAL_BOUCLE</b>
+                </B_creneau000>
+        </div>
+
+
+    </section>
+    <!-- Footer -->
+    <INCLURE{fond=inclure/footer} />
+
+</div>
+
+<!-- Scripts -->
+<INCLURE{fond=inclure/scripts} />
+
+
+
+</body>
+</html>
+]

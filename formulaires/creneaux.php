@@ -27,12 +27,26 @@ CREATE TABLE `spip_sqq_creneaux` (
 `ladate` datetime NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+
+
 ALTER TABLE `spip_sqq_creneaux`
 ADD PRIMARY KEY (`id_sqq_creneaux`);
 
 ALTER TABLE `spip_sqq_creneaux`
 MODIFY `id_sqq_creneaux` bigint(21) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ *
+ *
+ALTER TABLE spip_sqq_creneaux ADD bdm_remarques text NOT NULL
+ALTER TABLE spip_sqq_creneaux ADD bdm_ok text NOT NULL
 
+ *
+ *
+ *
+ *
+
+ *
+ *
+ *
  */
 
 /**
