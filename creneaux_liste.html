@@ -27,6 +27,15 @@
             <a href='spip.php?page=creneaux_liste_planning'>Planning</a>
             [(#ENV{triinverse}|?{#SET{triinverse,#ENV{triinverse}},#SET{triinverse,""}})]
             <table>
+                <tr>
+                    <th>BDM ok?</th>
+                    <th>Nom Prénom modif</th>
+                    <th>Créneaux</th>
+                    <th>Remarques</th>
+                    <th>BDM remarques</th>
+
+                </tr>
+
                 <BOUCLE_creneau000(spip_sqq_creneaux){par #ENV{tri}}{!par #GET{triinverse}}>
                     <tr>
                         <td>#BDM_OK <input type="checkbox" name="#GET{name}" class="checkbox" id="bdm_ok" value="#BDM_OK"  [(#BDM_OK|oui)checked="checked"] /> </td>
@@ -37,8 +46,8 @@
                             [(#GET{fl}|concat{':label_creneau_volant_'#CRENEAU_VOLANT}|_T)]<br/>
                             [(#GET{fl}|concat{':label_commission_'#COMMISSION}|_T)]
                         </td>
-                        <td>
-                        <td>#BDM_REMARQUES             </td>
+                        <td>[(#CRENEAU_VOLANT_RAISON)<br/>][(#COMMISSION_AUTRE)<br/>][(#REMARQUES)]</td>
+                        <td>#BDM_REMARQUES</td>
 
 
                     </tr>
