@@ -1,0 +1,10 @@
+#CACHE{0}
+[(#SESSION{id_auteur}|in_array{#LISTE{1,407,525,110,220,959}}|sinon_interdire_acces)]
+#HTTP_HEADER{Content-Type: text/csv; charset=windows-1252/Winlatin1}
+#HTTP_HEADER{Content-Disposition: attachment; filename=inscriptions.csv}
+ 
+"prenom";"nom","id_creneau","choix1","semaine1","choix2","semaine2","choix3","semaine3","volant","comission";"volant raison","commission autre","remarques"
+#SET{fl,superquinquin}
+<BOUCLE_creneau000(spip_sqq_creneaux){par id_sqq_creneaux}>"[(#PRENOM|strtolower|ucfirst)]","[(#NOM|strtoupper)]";"[(#ID_SQQ_CRENEAUX)]";"[(#GET{fl}|concat{':label_creneau',"_",#CRENEAU1}|_T)]","[(#GET{fl}|concat{':label_semaine',"_court_",#SEMAINE1}|_T)]";"[(#GET{fl}|concat{':label_creneau',"_",#CRENEAU2}|_T)]";"[(#GET{fl}|concat{':label_semaine',"_court_",#SEMAINE2}|_T)]";"[(#GET{fl}|concat{':label_creneau',"_",#CRENEAU3}|_T)]";"[(#GET{fl}|concat{':label_semaine',"_court_",#SEMAINE3}|_T)]";"[(#GET{fl}|concat{':label_creneau_volant_'#CRENEAU_VOLANT}|_T)]";"[(#GET{fl}|concat{':label_commission_'#COMMISSION}|_T)]";"[(#CRENEAU_VOLANT_RAISON)]";"[(#COMMISSION_AUTRE)]";"[(#REMARQUES)]"
+</BOUCLE_creneau000>
+]
