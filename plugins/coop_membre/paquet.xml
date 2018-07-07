@@ -1,0 +1,22 @@
+<paquet
+        prefix="coop_membre"
+        categorie="outil"
+        version="1.8.0"
+        etat="test"
+        compatibilite="[3.0.0;3.2.*]"
+        logo="prive/themes/spip/images/coopmember-128.png"
+        schema="1.0.0"
+        documentation=""
+>
+
+    <nom>Coop Membre</nom>
+
+    <auteur>Ben.</auteur>
+    <licence>GNU/GPL</licence>
+
+
+    <necessite nom="cextras" compatibilite="[3.0.5;[" />
+
+    <pipeline nom="declarer_champs_extras" inclure="base/coop_membre.php" />
+
+</paquet>
